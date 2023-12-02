@@ -1,5 +1,8 @@
 fun main() {
 
+	/**
+	 * NOTE: Not sum of all colors in sets, just one set constraint
+	 */
 	fun part1(input: List<String>): Int {
 		return parse(input).filter {
 			it.sets.all { s ->
@@ -9,12 +12,12 @@ fun main() {
 	}
 
 	fun part2(input: List<String>): Int {
-		return parse(input).map {
+		return parse(input).sumOf {
 			val blue = it.sets.maxOf { s -> s.blue }
 			val red = it.sets.maxOf { s -> s.red }
 			val green = it.sets.maxOf { s -> s.green }
 			blue * red * green
-		}.sum()
+		}
 	}
 
 	val input = readInput("Day02")
