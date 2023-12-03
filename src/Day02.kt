@@ -108,12 +108,12 @@ private fun parse(input: List<String>): List<Game> {
 
 }
 
-data class Game(
+private data class Game(
 	val id: Int,
 	val sets: List<Set>
 )
 
-data class Set(
+private data class Set(
 	var blue: Int,
 	var red: Int,
 	var green: Int
