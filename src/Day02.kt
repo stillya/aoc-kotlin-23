@@ -25,7 +25,7 @@ fun main() {
 	part2(input).println()
 }
 
-fun setsBorder(s: String): MutableList<Int> {
+private fun setsBorder(s: String): List<Int> {
 	val setsEndIdx = mutableListOf<Int>()
 	var setIdx = 0
 	while (setIdx != -1) {
@@ -38,7 +38,7 @@ fun setsBorder(s: String): MutableList<Int> {
 	return setsEndIdx
 }
 
-fun colorsBorder(setsBorder: List<Int>, s: String): Map<Int, Int> {
+private fun colorsBorder(setsBorder: List<Int>, s: String): Map<Int, Int> {
 	val sets = mutableMapOf<Int, Int>() // colorIdx -> setIdx
 	var idx = 0
 	setsBorder.forEachIndexed { i, end ->
@@ -58,7 +58,7 @@ fun colorsBorder(setsBorder: List<Int>, s: String): Map<Int, Int> {
 	return sets
 }
 
-fun parse(input: List<String>): List<Game> {
+private fun parse(input: List<String>): List<Game> {
 	return input.map {
 		val sets = mutableListOf<Set>()
 		val idEndIdx = it.indexOf(":")
